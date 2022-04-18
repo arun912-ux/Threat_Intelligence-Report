@@ -15,12 +15,13 @@
     <br/>
 4. Goto `localhost:8080/"artifactname"/`
    
-   <br/>
+
 5. End Points : 
     - `api/url`  : to fetch urls
     - `api/domain`  : to fetch domains
     - `api/ip`  : to fetch ips
 
+<br/>
 
 ### Homepage
 
