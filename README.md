@@ -25,10 +25,10 @@
 
 ### Homepage
 
-- IP : to fetch IPs
-- DOMAIN : to fetch Domains
-- URL : to fetch URL
-- Search box : to search specific content
+- **IP** : to fetch IPs
+- **DOMAIN** : to fetch Domains
+- **URL** : to fetch URL
+- **Search box** : to search specific content
 
 <img src="homepage.png" alt="homepage.png" />
 
