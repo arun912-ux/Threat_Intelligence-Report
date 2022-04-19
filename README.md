@@ -4,9 +4,9 @@
 
 1. Build the project with Maven. War file is created in 
     <p> <code>/out/arifact/"artifactname"/"artifactname".war</code> </p>  and
-   <p> <code> target/ </code> </p>
+   <p> <code> target/"artifactname".war </code> </p>
    
-2. Copy the war file into Tomcat webapps folder
+2. Copy the war file into Tomcat / TomEE webapps folder
    <p><code> %CATALINE_HOME%/webapps/ </code></p>
    
 3. Start the Tomcat server. Startup script is in `bin/` directory

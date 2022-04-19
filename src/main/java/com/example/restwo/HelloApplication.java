@@ -16,6 +16,8 @@ public class HelloApplication extends Application {
 
     public static File file = new File(System.getProperty("user.home") +
                         File.separator + "Downloads" + File.separator + "ASD123");
+
+
     static {
         try {
 
@@ -26,7 +28,7 @@ public class HelloApplication extends Application {
             int days = Period.between(date, LocalDate.now()).getDays();
 
             if( !file.exists() || days > 7 ) {
-                Controller.getJson();
+                Controller.start();
             }
 
             System.out.println(line + "Done..." + line);
@@ -35,10 +37,6 @@ public class HelloApplication extends Application {
             System.out.print("");
         }
     }
-
-
-
-
 
 
 

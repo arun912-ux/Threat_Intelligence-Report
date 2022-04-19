@@ -12,16 +12,19 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class Controller {
 
     static File file = HelloApplication.file;
-    static boolean flag = false;
+//    static boolean flag = false;
 
-    static DB mapdb = DBMaker.fileDB(file).fileLockDisable().checksumHeaderBypass().closeOnJvmShutdown().make();
+    static DB mapdb = DBMaker.fileDB(file)
+                        .fileLockDisable()
+                        .checksumHeaderBypass()
+                        .closeOnJvmShutdown()
+                        .make();
     public static HTreeMap<String, Map<String, String>> hashmap = (HTreeMap<String, Map<String, String>>) mapdb.hashMap("hashmapfile").createOrOpen();
 
 //    static DB mapdb = DBMaker.memoryDB().make();
@@ -31,6 +34,11 @@ public class Controller {
 
 
 
+    public static void start() throws IOException {
+        String xml = getXMLFromSource();
+        List<Map<String, String>> mapList = getJson(xml);
+        save(mapList);
+    }
 
 
 
@@ -43,8 +51,7 @@ public class Controller {
 
 
 
-
-    public static void getJson() throws IOException {
+    public static List<Map<String, String>> getJson(String xmlString) throws IOException {
 
         System.out.println("Inside getJson() Method");
 
@@ -54,10 +61,10 @@ public class Controller {
         Map<String, String> domainMap = new HashMap<>();
 
         // ! getting raw XML data from source
-        String ret = getXMLFromSource();
+//        String ret = getXMLFromSource();
 //        System.out.println(ret);
         // ! converting into JSON
-        String jsonString = XML.toJSONObject(ret).toString(4);
+        String jsonString = XML.toJSONObject(xmlString).toString(4);
 //        System.out.println(jsonString);
 
         // ! extracting required data from JSON
@@ -94,7 +101,13 @@ public class Controller {
         }
 
         // ! save in MapDB
-        save(ipMap, uriMap, domainMap);
+//        save(ipMap, uriMap, domainMap);
+        List< Map<String, String> > mapList = new ArrayList<>(3);
+        mapList.add(0, ipMap);
+        mapList.add(1, uriMap);
+        mapList.add(2, domainMap);
+
+        return mapList;
 
     }
 
@@ -198,9 +211,13 @@ public class Controller {
 
 
 
-    static void save(Map<String, String> ipMap, Map<String, String> uriMap, Map<String, String> domainMap){
+    static void save(List<Map<String, String>> mapList /*, Map<String, String> ipMap, Map<String, String> uriMap, Map<String, String> domainMap*/){
 
         System.out.println("in Controller.save()");
+        Map<String, String> ipMap = mapList.get(0);
+        Map<String, String> uriMap = mapList.get(1);
+        Map<String, String> domainMap = mapList.get(2);
+
 
         System.out.println(ipMap.size());
         System.out.println(uriMap.size());
