@@ -101,7 +101,7 @@ public class Service {
 
 
     public String search(String type, String input) {
-        System.out.println("\n\n\nSearching : \n\n\n");
+        System.out.println("\n\n\nSearching : ");
         System.out.println(type + " : " + input);
         Map<String, String> getMap = hashmap.get(type.toUpperCase());
         if(Objects.requireNonNull(getMap).containsKey(input)){
