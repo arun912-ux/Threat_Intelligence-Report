@@ -2,19 +2,21 @@
 
 ### How to Run
 
-1. Build the project with Maven. War file is created in 
-    <p> <code>/out/arifact/"artifactname"/"artifactname".war</code> </p>  and
-   <p> <code> target/"artifactname".war </code> </p>
+1. Set the output war file name in `pom.xml` file in line `106`.
+2. Build the project with Maven. 
+   <p><code> mvnw.cmd install -f pom.xml </code></p>
+3. War file is created in
+   <p> <code> target/"filename".war </code> </p>
    
-2. Copy the war file into Tomcat / TomEE webapps folder
-   <p><code> %CATALINE_HOME%/webapps/ </code></p>
+4. Copy the war file into Tomcat / TomEE webapps folder
+   <p><code> $CATALINE_HOME/webapps/ </code></p>
    
-3. Start the Tomcat server. Startup script is in `bin/` directory
+5. Start the Tomcat server. Startup script is in `$CATALINA_HOME/bin/` directory
     - `startup.bat` : for Windows
     - `startup.sh`  : for Linux
       
     
-4. Goto `localhost:8080/"artifactname"/`
+4. Goto `localhost:8080/"filename"/`
    
 
 5. End Points : 
