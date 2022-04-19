@@ -6,12 +6,12 @@
 ### How to Run
 
 1. Set the output war file name in `pom.xml` file in line `169`.
-   <p>example : <code> rest </code>  </p>
+   <p>e.g. : <code> rest </code>  </p>
 2. Build the project with Maven. 
    <p><code> mvnw.cmd install -f pom.xml </code></p>
 3. War file is created in
    <p> <code> target/"filename".war </code> </p>
-   <p> example :  <code> target/rest.war </code> </p>
+   <p> e.g. :  <code> target/rest.war </code> </p>
    
 4. Copy the war file into Tomcat webapps folder
    <p><code> $CATALINE_HOME/webapps/ </code></p>
@@ -22,7 +22,7 @@
       
     
 4. Goto `localhost:8080/"filename"/`
-   <p>example : <code>localhost:8080/rest/</code> </p>
+   <p>e.g. : <code>localhost:8080/rest/</code> </p>
    
 
 5. End Points : 
@@ -30,7 +30,7 @@
     - `api/domain`  : to fetch domains
     - `api/ip`  : to fetch ips
 
-   example : `localhost:8080/rest/api/ip`
+   e.g. : `localhost:8080/rest/api/ip`
 <br/>
 
 ----------------------------------------------------
