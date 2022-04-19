@@ -6,6 +6,8 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.MediaType;
 import org.json.JSONObject;
 
+import static jakarta.ws.rs.core.Response.Status.OK;
+
 
 @Path("/")
 public class Resource {
@@ -50,7 +52,7 @@ public class Resource {
         String type = jsonObject.get("type").toString();
         String input = jsonObject.get("input").toString();
         System.out.println("\n" + type + " : " + input);
-        return Response.status(200).entity(service.search(type, input)).build();
+        return Response.status(OK).entity(service.search(type, input)).build();
     }
 
 

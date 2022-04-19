@@ -3,7 +3,8 @@
 ### How to Run
 
 1. Build the project with Maven. War file is created in 
-    <p> <code>/out/arifact/"artifactname"/"artifactname".war</code> </p>
+    <p> <code>/out/arifact/"artifactname"/"artifactname".war</code> </p>  and
+   <p> <code> target/ </code> </p>
    
 2. Copy the war file into Tomcat webapps folder
    <p><code> %CATALINE_HOME%/webapps/ </code></p>
