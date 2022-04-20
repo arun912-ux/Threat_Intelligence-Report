@@ -48,6 +48,19 @@ function printJSON(obj){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 function httpGet(theUrl) {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false);
@@ -69,6 +82,17 @@ function httpPost(theUrl, body) {
     return xhr.responseText;
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 let form = document.getElementById('theForm');
